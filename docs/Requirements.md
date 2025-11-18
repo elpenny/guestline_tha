@@ -1,0 +1,111 @@
+﻿The Challenge:  Create a program to manage hotel room availability and reservations.  
+The application should read from files containing hotel data and booking data, then allow a user to check room availability for a specified hotel, date range, and room type.   
+Example command to run the program:   myapp --hotels hotels.json --bookings bookings.json
+
+Example: hotels.json
+```json
+[
+  {
+    "id": "H1",
+    "name": "Hotel California",
+    "roomTypes": [
+      {
+        "code": "SGL",
+        "description": "Single Room",
+        "amenities": [
+          "WiFi",
+          "TV"
+        ],
+        "features": [
+          "Non-smoking"
+        ]
+      },
+      {
+        "code": "DBL",
+        "description": "Double Room",
+        "amenities": [
+          "WiFi",
+          "TV",
+          "Minibar"
+        ],
+        "features": [
+          "Non-smoking",
+          "Sea View"
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "roomType": "SGL",
+        "roomId": "101"
+      },
+      {
+        "roomType": "SGL",
+        "roomId": "102"
+      },
+      {
+        "roomType": "DBL",
+        "roomId": "201"
+      },
+      {
+        "roomType": "DBL",
+        "roomId": "202"
+      }
+    ]
+  }
+]
+```
+
+Example: bookings.json   
+```json
+[
+    {
+        "hotelId": "H1",
+        "arrival": "20240901",
+        "departure": "20240903",
+        "roomType": "DBL",
+        "roomRate": "Prepaid"
+    },
+    {
+        "hotelId": "H1",
+        "arrival": "20240902",
+        "departure": "20240905",
+        "roomType": "SGL",
+        "roomRate": "Standard"
+    }
+]
+```
+The program should implement the 2 commands described below and exit when a blank line is entered.
+
+## Availability Command
+
+Example console input:  
+```
+Availability(H1, 20240901, SGL)  
+Availability(H1, 20240901-20240903, DBL)
+```  
+Output: the program should give the availability count for the specified room type and date range.
+
+Note: hotels sometimes accept overbookings so the value can be negative to indicate that the hotel is over capacity for that room type.
+
+## Search Command
+
+Example input: 
+```
+Search(H1, 365, SGL)
+```
+The program should return a comma separated list of date ranges and availability where the room is available. In this example, “365” is the number of days ahead to query for availability. If there is no availability the program should return an empty line.
+
+Example output:  
+```
+(20241101-20241103, 2), (20241203-20241210, 1) 
+```
+Means that in the next 35 days, there are 2 rooms of type “SGL” in hotel “H1" available in the period of 2024/11/01 - 2024/11/03 and 1 room available in 2024/12/03 - 2024/12/10 period.
+
+General notes:
+We expect the task to be implemented in C#.
+Take the time you need to complete the test, there is no deadline. However, if we do not hear from you within two weeks, we will assume that you are no longer interested in a role.
+If you have any questions, please get in touch. Please state any assumptions you made when implementing the challenge.  
+Using Copilot or other LLMs is acceptable, but please make a note of how you have used them. Make sure that you fully understand your code as we will ask for details in the first interview.
+Try to approach the challenge as you would approach any typical work task; we are not looking for you to show knowledge of frameworks or unusual programming language features. Most importantly, keep it simple.  
+Please include a link to the source on a public repository (e.g., GitHub) and include instructions on how to build and run it and send it to me.  
