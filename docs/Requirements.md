@@ -1,6 +1,6 @@
 ﻿The Challenge:  Create a program to manage hotel room availability and reservations.  
 The application should read from files containing hotel data and booking data, then allow a user to check room availability for a specified hotel, date range, and room type.   
-Example command to run the program:   myapp --hotels hotels.json --bookings bookings.json
+Example command to run the program: `myapp --hotels hotels.json --bookings bookings.json`
 
 Example: hotels.json
 ```json
