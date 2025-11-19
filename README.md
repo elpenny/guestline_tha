@@ -5,7 +5,7 @@ Take Home Assigment for Guestline - short program for hotel rooms bookings manag
 ## How to build this
 
 Prerequisites: 
-1. Have dotnet 8 SDK
+1. Have dotnet 10 SDK
 2. (Optionally) add your own input files somewhere
 
 What to do:

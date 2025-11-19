@@ -1,10 +1,12 @@
+using Xunit.Abstractions;
+
 namespace AssigmentApp.Tests;
 
-public class UnitTest1
+public class UnitTest1(ITestOutputHelper testOutputHelper)
 {
     [Fact]
     public void Test1()
     {
-        Console.WriteLine("Hello, World!");
+        testOutputHelper.WriteLine("Hello, World!");
     }
 }
