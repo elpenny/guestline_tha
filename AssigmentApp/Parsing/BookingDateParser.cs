@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using AssigmentApp.Types;
 
 namespace AssigmentApp.Parsing;
 
@@ -35,6 +36,18 @@ public static class BookingDateParser
         }
 
         to = default;
+        return false;
+    }
+    
+    public static bool TryParseDateRange(string s, out DateRange range)
+    {
+        if (TryParseSingleOrRange(s, out var from, out var to))
+        {
+            range = new DateRange(from, to);
+            return true;
+        }
+
+        range = default;
         return false;
     }
 }

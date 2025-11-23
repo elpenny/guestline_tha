@@ -8,11 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="216ffbcb-eb7b-4a4b-a295-ba64df19c7aa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.guestline_tha/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.guestline_tha/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/CustomConverters/DateOnlyJsonConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Parsing/DateOnlyJsonConverter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/Booking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/Booking.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/Command.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/Constants.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +34,9 @@
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Parsing/CommandParser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Parsing/DateOnlyJsonConverter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/guestline_tha/AssigmentApp/Types/Booking.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/Booking.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/CommandsArguments.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/Constants.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/Hotel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/ProgramState.cs" root0="FORCE_HIGHLIGHTING" />
@@ -304,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763897469022</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="mapped better separation of concerns">
+      <option name="closed" value="true" />
+      <created>1763902300333</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1763902300333</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +343,8 @@
     <MESSAGE value="arg parsing start" />
     <MESSAGE value="move stuff around to organize it better" />
     <MESSAGE value="custom converter for date only serialization" />
-    <option name="LAST_COMMIT_MESSAGE" value="custom converter for date only serialization" />
+    <MESSAGE value="mapped better separation of concerns" />
+    <option name="LAST_COMMIT_MESSAGE" value="mapped better separation of concerns" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
