@@ -13,4 +13,3 @@ public readonly record struct Booking(
     string RoomType,
     string RoomRate
 );
-

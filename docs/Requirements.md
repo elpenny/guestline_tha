@@ -107,5 +107,5 @@ We expect the task to be implemented in C#.
 Take the time you need to complete the test, there is no deadline. However, if we do not hear from you within two weeks, we will assume that you are no longer interested in a role.
 If you have any questions, please get in touch. Please state any assumptions you made when implementing the challenge.  
 Using Copilot or other LLMs is acceptable, but please make a note of how you have used them. Make sure that you fully understand your code as we will ask for details in the first interview.
-Try to approach the challenge as you would approach any typical work task; we are not looking for you to show knowledge of frameworks or unusual programming language features. Most importantly, keep it simple.  
-Please include a link to the source on a public repository (e.g., GitHub) and include instructions on how to build and run it and send it to me.  
+Try to approach the challenge as you would approach any typical work task; we are not looking for you to show knowledge of frameworks or unusual programming language features. Most importantly, keep it simple.
+Please include a link to the source on a public repository (e.g., GitHub) and include instructions on how to build and run it and send it to me.
