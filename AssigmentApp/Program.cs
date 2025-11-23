@@ -115,8 +115,13 @@ partial class Program
             Console.WriteLine($"No content found at: {jsonPath}");
             return null;
         }
+        var options = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+        };
 
-        var content = JsonSerializer.Deserialize<List<T>>(fileContent);
+
+        var content = JsonSerializer.Deserialize<List<T>>(fileContent, options);
         if (content == null || content.Count == 0)
         {
             Console.WriteLine($"No content found at: {jsonPath}");
