@@ -1,11 +1,11 @@
 ﻿namespace AssigmentApp.Types;
 
 public record ProgramState(
-    List<Hotel> Hotels,
-    List<Booking> Bookings
+    IReadOnlyList<Hotel> Hotels,
+    IReadOnlyList<Booking> Bookings
 );
 
-public record ProgramOptions(
+public readonly record struct ProgramOptions(
     string HotelsPath, 
     string BookingsPath
 );

@@ -3,7 +3,7 @@ using AssigmentApp.Parsing;
 
 namespace AssigmentApp.Types;
 
-public record Booking(
+public readonly record struct Booking(
     string HotelId,
     [property: JsonConverter(typeof(DateOnlyJsonConverter))]
     DateOnly Arrival,

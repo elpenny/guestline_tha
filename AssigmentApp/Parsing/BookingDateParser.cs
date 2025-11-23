@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using AssigmentApp.Types;
+using AssigmentApp.Types.Commands;
 
 namespace AssigmentApp.Parsing;
 

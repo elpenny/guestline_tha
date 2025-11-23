@@ -1,22 +1,26 @@
+using System.Text.Json.Serialization;
+
 namespace AssigmentApp.Types;
 
 public record Hotel(
     string Id,
     string Name,
-    List<RoomTypes> RoomTypes,
-    List<Rooms> Rooms
+    IReadOnlyList<RoomType> RoomTypes,
+    IReadOnlyList<Room> Rooms
 );
 
-public record RoomTypes(
+public record RoomType(
     string Code,
     string Description,
-    List<string> Amenities,
-    List<string> Features
+    IReadOnlyList<string> Amenities,
+    IReadOnlyList<string> Features
 );
 
-public record Rooms(
-    string RoomType,
+public readonly record struct Room(
+    [property: JsonPropertyName("roomType")] 
+    string RoomTypeCode,
     string RoomId
 );
+
 
 

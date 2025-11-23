@@ -8,7 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="216ffbcb-eb7b-4a4b-a295-ba64df19c7aa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.guestline_tha/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.guestline_tha/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssigmentApp/AssigmentApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/AssigmentApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssigmentApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/Booking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/Booking.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/CommandsArguments.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/Constants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/Hotel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/Hotel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/ProgramState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/ProgramState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,15 +37,20 @@
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Core/CommandLoop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Core/CommandsHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Parsing/ArgumentsParser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/guestline_tha/AssigmentApp/Parsing/BookingDateParser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Parsing/BookingDateParser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Parsing/CommandParser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Parsing/DateOnlyJsonConverter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/Repositories/guestline_tha/AssigmentApp/Types/Booking.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/Booking.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/CommandsArguments.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/Commands/Availability.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/Commands/Common.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/Commands/Search.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/guestline_tha/AssigmentApp/Types/Constants.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/Constants.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/Hotel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/guestline_tha/AssigmentApp/Types/Hotel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/ProgramState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/example/bookings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/example/hotels.json" root0="FORCE_HIGHLIGHTING" />
@@ -310,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763902300333</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="more shuffling stuff around">
+      <option name="closed" value="true" />
+      <created>1763902916017</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1763902916017</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,7 +364,8 @@
     <MESSAGE value="move stuff around to organize it better" />
     <MESSAGE value="custom converter for date only serialization" />
     <MESSAGE value="mapped better separation of concerns" />
-    <option name="LAST_COMMIT_MESSAGE" value="mapped better separation of concerns" />
+    <MESSAGE value="more shuffling stuff around" />
+    <option name="LAST_COMMIT_MESSAGE" value="more shuffling stuff around" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -361,84 +382,6 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/AssigmentApp/Program.cs</url>
-          <line>55</line>
-          <properties documentPath="D:\Repositories\guestline_tha\AssigmentApp\Program.cs" containingFunctionPresentation="Method 'Main'">
-            <startOffsets>
-              <option value="1670" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1715" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/AssigmentApp/Program.cs</url>
-          <line>68</line>
-          <properties documentPath="D:\Repositories\guestline_tha\AssigmentApp\Program.cs" containingFunctionPresentation="Method 'Main'">
-            <startOffsets>
-              <option value="2067" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2181" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/AssigmentApp/Program.cs</url>
-          <line>72</line>
-          <properties documentPath="D:\Repositories\guestline_tha\AssigmentApp\Program.cs" containingFunctionPresentation="Method 'Main'">
-            <startOffsets>
-              <option value="2293" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2395" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/AssigmentApp/Program.cs</url>
-          <line>76</line>
-          <properties documentPath="D:\Repositories\guestline_tha\AssigmentApp\Program.cs" containingFunctionPresentation="Method 'Main'">
-            <startOffsets>
-              <option value="2488" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2518" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/AssigmentApp/Program.cs</url>
-          <line>85</line>
-          <properties documentPath="D:\Repositories\guestline_tha\AssigmentApp\Program.cs" containingFunctionPresentation="Method 'RunCommand'">
-            <startOffsets>
-              <option value="2733" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2811" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/AssigmentApp/Program.cs</url>
-          <line>24</line>
-          <properties documentPath="D:\Repositories\guestline_tha\AssigmentApp\Program.cs" containingFunctionPresentation="Method 'Main'">
-            <startOffsets>
-              <option value="602" />
-            </startOffsets>
-            <endOffsets>
-              <option value="652" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
