@@ -9,16 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="216ffbcb-eb7b-4a4b-a295-ba64df19c7aa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.guestline_tha/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.guestline_tha/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Core/CommandLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Core/CommandLoop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Core/CommandsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Core/CommandsHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Parsing/ArgumentsParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Parsing/ArgumentsParser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Parsing/CommandParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Parsing/CommandParser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Parsing/DateOnlyJsonConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/IO/DateOnlyJsonConverter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AssigmentApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/Booking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/Booking.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/Commands/Search.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/Commands/Search.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/Hotel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/Hotel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/ProgramState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/ProgramState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +30,10 @@
     <setting file="file://$PROJECT_DIR$/AssigmentApp.Tests/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Core/CommandLoop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Core/CommandsHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AssigmentApp/Core/DataValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/IO/DataLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/IO/DateOnlyJsonConverter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Repositories/guestline_tha/AssigmentApp/Parsing/ArgumentsParser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Parsing/ArgumentsParser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/Repositories/guestline_tha/AssigmentApp/Parsing/BookingDateParser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Repositories/guestline_tha/AssigmentApp/Parsing/BookingDateParser.cs" root0="SKIP_HIGHLIGHTING" />
@@ -351,7 +344,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763906911379</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="main file more-or-less done">
+      <option name="closed" value="true" />
+      <created>1763908974013</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1763908974013</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,7 +389,8 @@
     <MESSAGE value="more shuffling stuff around" />
     <MESSAGE value="More fun with expected types" />
     <MESSAGE value="add fluentResults" />
-    <option name="LAST_COMMIT_MESSAGE" value="add fluentResults" />
+    <MESSAGE value="main file more-or-less done" />
+    <option name="LAST_COMMIT_MESSAGE" value="main file more-or-less done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

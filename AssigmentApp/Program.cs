@@ -15,9 +15,11 @@ AppDomain.CurrentDomain.UnhandledException += (s, e) =>
 var parseResult = ArgumentsParser.Parse(args);
 if (parseResult.IsFailed) Fail(parseResult);
 
-
 var stateResult = DataLoader.LoadData(parseResult.Value);
 if (stateResult.IsFailed) Fail(stateResult);
+
+var validationResult = DataValidator.Validate(stateResult.Value);
+if (validationResult.IsFailed) Fail(validationResult);
 
 CommandLoop.Run(Console.In, Console.Out, stateResult.Value);
 return;
