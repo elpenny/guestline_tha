@@ -5,7 +5,7 @@ using AssigmentApp.Types;
 
 namespace AssigmentApp;
 
-class Program
+partial class Program
 {
     private const string HotelsArgName = "--hotels";
     private const string BookingsArgName = "--bookings";
@@ -84,12 +84,6 @@ class Program
     private static void RunCommand(Command command, string userInput)
     {
         Console.WriteLine($"Running command: {command} with user input: {userInput}");
-    }
-
-    public enum Command
-    {
-        Availability,
-        Search,
     }
 
     private static void PrintHelpMessage()

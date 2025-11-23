@@ -2,8 +2,8 @@ namespace AssigmentApp.Types;
 
 public record Booking(
     string HotelId,
-    string Arrival,
-    string Departure,
+    DateOnly Arrival,
+    DateOnly Departure,
     string RoomType,
     string RoomRate
 );
