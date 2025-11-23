@@ -1,6 +1,6 @@
 ﻿# Default ignored files
 /shelf/
-#/workspace.xml #configs
+/workspace.xml
 # Rider ignored files
 /.idea.guestline_tha.iml
 /projectSettingsUpdater.xml
