@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using AssigmentApp.Types.Commands;
+using FluentResults;
 
 namespace AssigmentApp.Parsing;
 
@@ -9,45 +10,71 @@ public static class BookingDateParser
 
     public static DateOnly ParseDate(string s) =>
         DateOnly.ParseExact(s, DateFormat, CultureInfo.InvariantCulture);
-
-    public static bool TryParseDate(string s, out DateOnly date) =>
-        DateOnly.TryParseExact(s, DateFormat, CultureInfo.InvariantCulture,
-            DateTimeStyles.None, out date);
-
-    public static bool TryParseDateRange(string s, out DateOnly from, out DateOnly to)
+    
+    public static Result<DateOnly> ParseDateResult(string s)
     {
+        if (string.IsNullOrWhiteSpace(s))
+            return Result.Fail("Date value is empty.");
+
+        if (DateOnly.TryParseExact(
+                s,
+                DateFormat,
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out var date))
+        {
+            return Result.Ok(date);
+        }
+
+        return Result.Fail($"Invalid date '{s}'. Expected format: {DateFormat}.");
+    }
+    
+    public static Result<(DateOnly From, DateOnly To)> ParseDateRange(string s)
+    {
+        if (string.IsNullOrWhiteSpace(s))
+            return Result.Fail("Date range value is empty.");
+
         var parts = s.Split('-', 2, StringSplitOptions.TrimEntries);
-        if (parts.Length == 2 && TryParseDate(parts[0], out from) && TryParseDate(parts[1], out to)) return true;
-        from = default;
-        to = default;
+        if (parts.Length != 2)
+            return Result.Fail($"Invalid date range '{s}'. Expected format: {DateFormat}-{DateFormat}.");
+
+        var fromResult = ParseDateResult(parts[0]);
+        if (fromResult.IsFailed)
+            return Result.Fail(fromResult.Errors);
+
+        var toResult = ParseDateResult(parts[1]);
+        if (toResult.IsFailed)
+            return Result.Fail(toResult.Errors);
+
+        var from = fromResult.Value;
+        var to = toResult.Value;
+
+        if (to < from)
+            return Result.Fail($"End date '{to:yyyyMMdd}' is before start date '{from:yyyyMMdd}'.");
+
+        return Result.Ok((from, to));
+    }
+    
+    public static Result<DateRange> ParseSingleOrRange(string s)
+    {
+        if (string.IsNullOrWhiteSpace(s))
+            return Result.Fail("Date value is empty.");
         
-        return false;
-    }
-    
-    public static bool TryParseSingleOrRange(string s, out DateOnly from, out DateOnly to)
-    {
-        if (TryParseDateRange(s, out from, out to))
-            return true;
-
-        if (TryParseDate(s, out from))
+        if (s.Contains('-'))
         {
-            to = from;
-            return true;
-        }
+            var rangeResult = ParseDateRange(s);
+            if (rangeResult.IsFailed)
+                return Result.Fail(rangeResult.Errors);
 
-        to = default;
-        return false;
-    }
-    
-    public static bool TryParseDateRange(string s, out DateRange range)
-    {
-        if (TryParseSingleOrRange(s, out var from, out var to))
-        {
-            range = new DateRange(from, to);
-            return true;
+            var (from, to) = rangeResult.Value;
+            return Result.Ok(new DateRange(from, to));
         }
+        
+        var dateResult = ParseDateResult(s);
+        if (dateResult.IsFailed)
+            return Result.Fail(dateResult.Errors);
 
-        range = default;
-        return false;
+        var date = dateResult.Value;
+        return Result.Ok(new DateRange(date, date));
     }
 }

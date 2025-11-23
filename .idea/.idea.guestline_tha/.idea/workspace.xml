@@ -10,12 +10,7 @@
     <list default="true" id="216ffbcb-eb7b-4a4b-a295-ba64df19c7aa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.guestline_tha/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.guestline_tha/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AssigmentApp/AssigmentApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/AssigmentApp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/Booking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/Booking.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/CommandsArguments.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/Constants.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/Hotel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/Hotel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/ProgramState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/ProgramState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssigmentApp/Parsing/BookingDateParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Parsing/BookingDateParser.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763902916017</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="More fun with expected types">
+      <option name="closed" value="true" />
+      <created>1763906249333</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1763906249333</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,7 +368,8 @@
     <MESSAGE value="custom converter for date only serialization" />
     <MESSAGE value="mapped better separation of concerns" />
     <MESSAGE value="more shuffling stuff around" />
-    <option name="LAST_COMMIT_MESSAGE" value="more shuffling stuff around" />
+    <MESSAGE value="More fun with expected types" />
+    <option name="LAST_COMMIT_MESSAGE" value="More fun with expected types" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
