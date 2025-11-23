@@ -1,6 +1,6 @@
 ﻿namespace AssigmentApp.Parsing;
 
-public class CommandParser
+public static class CommandParser
 {
     
 }

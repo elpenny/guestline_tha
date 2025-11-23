@@ -1,6 +1,6 @@
 ﻿namespace AssigmentApp.Core;
 
-public class CommandsHandler
+public static class CommandsHandler
 {
     
 }

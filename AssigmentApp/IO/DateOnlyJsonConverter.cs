@@ -1,9 +1,10 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
+using AssigmentApp.Parsing;
 
-namespace AssigmentApp.Parsing;
+namespace AssigmentApp.IO;
 
-public class DateOnlyJsonConverter : JsonConverter<DateOnly>
+public sealed class DateOnlyJsonConverter : JsonConverter<DateOnly>
 {
     public override DateOnly Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) =>
         BookingDateParser.ParseDate(reader.GetString()!);

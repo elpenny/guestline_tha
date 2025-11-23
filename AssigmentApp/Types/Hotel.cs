@@ -2,14 +2,14 @@ using System.Text.Json.Serialization;
 
 namespace AssigmentApp.Types;
 
-public record Hotel(
+public sealed record Hotel(
     string Id,
     string Name,
     IReadOnlyList<RoomType> RoomTypes,
     IReadOnlyList<Room> Rooms
 );
 
-public record RoomType(
+public sealed record RoomType(
     string Code,
     string Description,
     IReadOnlyList<string> Amenities,

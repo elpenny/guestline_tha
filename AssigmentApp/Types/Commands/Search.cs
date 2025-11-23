@@ -4,7 +4,7 @@ namespace AssigmentApp.Types.Commands;
 
 public readonly record struct SearchCommandArguments(string HotelName, int DaysToSearch, string RoomType);
 
-public record SearchResult(IReadOnlyList<SearchResultEntry> Entries)
+public sealed record SearchResult(IReadOnlyList<SearchResultEntry> Entries)
 {
     public override string ToString()
     {

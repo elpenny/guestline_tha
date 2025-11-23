@@ -1,6 +1,6 @@
 ﻿namespace AssigmentApp.Types;
 
-public record ProgramState(
+public sealed record ProgramState(
     IReadOnlyList<Hotel> Hotels,
     IReadOnlyList<Booking> Bookings
 );
