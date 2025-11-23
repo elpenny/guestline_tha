@@ -9,11 +9,10 @@
   <component name="ChangeListManager">
     <list default="true" id="216ffbcb-eb7b-4a4b-a295-ba64df19c7aa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.guestline_tha/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.guestline_tha/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/AssigmentApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/AssigmentApp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Booking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/Booking.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Command.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/Command.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssigmentApp/Hotel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/Hotel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssigmentApp/CustomConverters/DateOnlyJsonConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Parsing/DateOnlyJsonConverter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AssigmentApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/Booking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AssigmentApp/Types/Booking.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssigmentApp/Types/Command.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +31,17 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/AssigmentApp.Tests/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AssigmentApp/CustomConverters/DateOnlyJsonConverter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AssigmentApp/Core/CommandLoop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AssigmentApp/Core/CommandsHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AssigmentApp/Parsing/ArgumentsParser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AssigmentApp/Parsing/BookingDateParser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AssigmentApp/Parsing/CommandParser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AssigmentApp/Parsing/DateOnlyJsonConverter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/Booking.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/Constants.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/Hotel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AssigmentApp/Types/ProgramState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/example/bookings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/example/hotels.json" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -56,7 +62,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.AssigmentApp with example data.executor": "Debug",
+    ".NET Project.AssigmentApp with example data.executor": "Run",
+    ".NET Project.AssigmentApp with too much args).executor": "Debug",
+    ".NET Project.AssigmentApp with too much args.executor": "Debug",
     ".NET Project.AssigmentApp.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -120,8 +128,29 @@
   </component>
   <component name="RunManager" selected=".NET Project.AssigmentApp with example data">
     <configuration name="AssigmentApp with example data" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/AssigmentApp/bin/Debug/net10.0/AssigmentApp" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/AssigmentApp/bin/Debug/net10.0/AssigmentApp.exe" />
       <option name="PROGRAM_PARAMETERS" value="--hotels ../../../../example/hotels.json --bookings ../../../../example/bookings.json" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AssigmentApp/bin/Debug/net10.0" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/AssigmentApp/AssigmentApp.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="net10.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="AssigmentApp with too much args" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/AssigmentApp/bin/Debug/net10.0/AssigmentApp.exe" />
+      <option name="PROGRAM_PARAMETERS" value=" --debug --hotels ../../../../example/hotels.json --bookings ../../../../example/bookings.json" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AssigmentApp/bin/Debug/net10.0" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="ENV_FILE_PATHS" value="" />
@@ -164,6 +193,7 @@
     <list>
       <item itemvalue=".NET Project.AssigmentApp" />
       <item itemvalue=".NET Project.AssigmentApp with example data" />
+      <item itemvalue=".NET Project.AssigmentApp with too much args" />
     </list>
   </component>
   <component name="TaskManager">
@@ -258,7 +288,23 @@
       <option name="project" value="LOCAL" />
       <updated>1763739696433</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="move stuff around to organize it better">
+      <option name="closed" value="true" />
+      <created>1763897447392</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1763897447393</updated>
+    </task>
+    <task id="LOCAL-00012" summary="custom converter for date only serialization">
+      <option name="closed" value="true" />
+      <created>1763897469022</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1763897469022</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +335,9 @@
     <MESSAGE value="fix committing local-only file" />
     <MESSAGE value="models" />
     <MESSAGE value="arg parsing start" />
-    <option name="LAST_COMMIT_MESSAGE" value="arg parsing start" />
+    <MESSAGE value="move stuff around to organize it better" />
+    <MESSAGE value="custom converter for date only serialization" />
+    <option name="LAST_COMMIT_MESSAGE" value="custom converter for date only serialization" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -311,26 +359,78 @@
           <line>55</line>
           <properties documentPath="D:\Repositories\guestline_tha\AssigmentApp\Program.cs" containingFunctionPresentation="Method 'Main'">
             <startOffsets>
-              <option value="1671" />
+              <option value="1670" />
             </startOffsets>
             <endOffsets>
-              <option value="1716" />
+              <option value="1715" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/AssigmentApp/CustomConverters/DateOnlyJsonConverter.cs</url>
-          <line>9</line>
-          <properties documentPath="D:\Repositories\guestline_tha\AssigmentApp\CustomConverters\DateOnlyJsonConverter.cs" containingFunctionPresentation="Method 'Read'">
+          <url>file://$PROJECT_DIR$/AssigmentApp/Program.cs</url>
+          <line>68</line>
+          <properties documentPath="D:\Repositories\guestline_tha\AssigmentApp\Program.cs" containingFunctionPresentation="Method 'Main'">
             <startOffsets>
-              <option value="319" />
+              <option value="2067" />
             </startOffsets>
             <endOffsets>
-              <option value="401" />
+              <option value="2181" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="6" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AssigmentApp/Program.cs</url>
+          <line>72</line>
+          <properties documentPath="D:\Repositories\guestline_tha\AssigmentApp\Program.cs" containingFunctionPresentation="Method 'Main'">
+            <startOffsets>
+              <option value="2293" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2395" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AssigmentApp/Program.cs</url>
+          <line>76</line>
+          <properties documentPath="D:\Repositories\guestline_tha\AssigmentApp\Program.cs" containingFunctionPresentation="Method 'Main'">
+            <startOffsets>
+              <option value="2488" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2518" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AssigmentApp/Program.cs</url>
+          <line>85</line>
+          <properties documentPath="D:\Repositories\guestline_tha\AssigmentApp\Program.cs" containingFunctionPresentation="Method 'RunCommand'">
+            <startOffsets>
+              <option value="2733" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2811" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AssigmentApp/Program.cs</url>
+          <line>24</line>
+          <properties documentPath="D:\Repositories\guestline_tha\AssigmentApp\Program.cs" containingFunctionPresentation="Method 'Main'">
+            <startOffsets>
+              <option value="602" />
+            </startOffsets>
+            <endOffsets>
+              <option value="652" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

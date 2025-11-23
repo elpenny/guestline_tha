@@ -5,7 +5,7 @@ using AssigmentApp.Types;
 
 namespace AssigmentApp;
 
-partial class Program
+public class Program
 {
     private const string HotelsArgName = "--hotels";
     private const string BookingsArgName = "--bookings";
@@ -63,14 +63,14 @@ partial class Program
         PrintHelpMessage();
         while (true)
         {
-            var userInput = Console.ReadLine()!;
+            var userInput = Console.ReadLine()!.Trim();
             if (userInput.StartsWith(nameof(Command.Availability)))
             {
-                RunCommand(Command.Availability, new string(userInput.TrimStart(nameof(Command.Availability))));
+                RunCommand(Command.Availability, new string(userInput.TrimStart(nameof(Command.Availability))), hotels, bookings);
             }
             else if (userInput.StartsWith(nameof(Command.Search)))
             {
-                RunCommand(Command.Search, new string(userInput.TrimStart(nameof(Command.Search))));
+                RunCommand(Command.Search, new string(userInput.TrimStart(nameof(Command.Search))), hotels, bookings);
             }
             else if (userInput == string.Empty)
             {
@@ -81,9 +81,12 @@ partial class Program
         }
     }
 
-    private static void RunCommand(Command command, string userInput)
+    private static void RunCommand(Command command, string userInput, List<Hotel> hotels, List<Booking> bookings)
     {
         Console.WriteLine($"Running command: {command} with user input: {userInput}");
+        Console.WriteLine("Parsing user input...");
+        
+
     }
 
     private static void PrintHelpMessage()
