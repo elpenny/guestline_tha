@@ -2,7 +2,7 @@
 
 namespace AssigmentApp.Types.Commands;
 
-public readonly record struct SearchCommandArguments(string HotelName, int DaysToSearch, string RoomType);
+public readonly record struct SearchCommandArguments(string HotelId, int DaysToSearch, string RoomType);
 
 public sealed record SearchResult(IReadOnlyList<SearchResultEntry> Entries)
 {
