@@ -87,4 +87,44 @@ public class ArgumentsParserTests
 
         Assert.True(result.IsFailed);
     }
+
+    [Fact]
+    public void Parse_NoArguments_Fails()
+    {
+        var args = Array.Empty<string>();
+
+        var result = ArgumentsParser.Parse(args);
+
+        Assert.True(result.IsFailed);
+    }
+
+    [Fact]
+    public void Parse_DuplicateHotels_Fails()
+    {
+        var args = new[]
+        {
+            ProgramConstants.HotelsArgName, "h1.json",
+            ProgramConstants.HotelsArgName, "h2.json",
+            ProgramConstants.BookingsArgName, "bookings.json"
+        };
+
+        var result = ArgumentsParser.Parse(args);
+
+        Assert.True(result.IsFailed);
+    }
+
+    [Fact]
+    public void Parse_DuplicateBookings_Fails()
+    {
+        var args = new[]
+        {
+            ProgramConstants.HotelsArgName, "hotels.json",
+            ProgramConstants.BookingsArgName, "b1.json",
+            ProgramConstants.BookingsArgName, "b2.json"
+        };
+
+        var result = ArgumentsParser.Parse(args);
+
+        Assert.True(result.IsFailed);
+    }
 }
