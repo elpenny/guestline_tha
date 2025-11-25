@@ -52,4 +52,17 @@ public class DataValidatorTests
 
         Assert.True(result.IsFailed);
     }
+
+    [Fact]
+    public void BookingWithZeroNights_FailsValidation()
+    {
+        var state = TestDataFactory.CreateValidState(bookings: new[]
+        {
+            TestDataFactory.CreateBooking("H1", "SGL", "20240901", "20240901")
+        });
+
+        var result = DataValidator.Validate(state);
+
+        Assert.True(result.IsFailed);
+    }
 }
