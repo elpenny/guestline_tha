@@ -5,7 +5,7 @@ public class BookingDateParserTests
     [Fact]
     public void SingleDate_ProducesOneNightRange()
     {
-        var result = BookingDateParser.ParseSingleOrRange("20240901");
+        var result = BookingDateParser.ParseCommandDateOrRange("20240901");
 
         Assert.True(result.IsSuccess);
         Assert.Equal(new DateOnly(2024, 9, 1), result.Value.Start);
@@ -15,7 +15,7 @@ public class BookingDateParserTests
     [Fact]
     public void DateRange_ParsesArrivalInclusiveDepartureExclusive()
     {
-        var result = BookingDateParser.ParseSingleOrRange("20240901-20240903");
+        var result = BookingDateParser.ParseCommandDateOrRange("20240901-20240903");
 
         Assert.True(result.IsSuccess);
         Assert.Equal(new DateOnly(2024, 9, 1), result.Value.Start);
@@ -25,7 +25,7 @@ public class BookingDateParserTests
     [Fact]
     public void DateRange_RejectsEndBeforeStart()
     {
-        var result = BookingDateParser.ParseSingleOrRange("20240903-20240901");
+        var result = BookingDateParser.ParseCommandDateOrRange("20240903-20240901");
 
         Assert.True(result.IsFailed);
     }
@@ -36,7 +36,15 @@ public class BookingDateParserTests
     [InlineData("2024-0901")]
     public void InvalidDate_ProducesError(string input)
     {
-        var result = BookingDateParser.ParseSingleOrRange(input);
+        var result = BookingDateParser.ParseCommandDateOrRange(input);
+
+        Assert.True(result.IsFailed);
+    }
+
+    [Fact]
+    public void BookingDates_RequireAtLeastOneNight()
+    {
+        var result = BookingDateParser.ParseBookingDates("20240901", "20240901");
 
         Assert.True(result.IsFailed);
     }

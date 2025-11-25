@@ -8,5 +8,5 @@ public enum CommandType
 
 public readonly record struct DateRange(DateOnly Start, DateOnly End)
 {
-    public bool IsSingleDay => Start == End;
+    public bool IsSingleDay => End == Start.AddDays(1);
 }

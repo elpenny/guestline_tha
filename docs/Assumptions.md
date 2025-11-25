@@ -7,7 +7,7 @@
     * No bookings referencing a `roomType` not present in the hotel's `roomTypes` list.
       Any validation failure results in program termination.
 3. All dates use the `yyyyMMdd` format.
-   Bookings treat `arrival` as inclusive and `departure` as exclusive (a booking from `20240901` to `20240903` blocks nights on the 1st and 2nd; the room becomes free on the 3rd).
+   Bookings treat `arrival` as inclusive and `departure` as exclusive (a booking from `20240901` to `20240903` blocks nights on the 1st and 2nd; the room becomes free on the 3rd), and `departure` must be after `arrival` (no zero-night stays).
 4. A single-date availability query such as `Availability(H1, 20240901, SGL)` is interpreted as checking the night of 2024-09-01 (arrival = 20240901, departure = 20240902).
 5. A date range in commands, e.g. `20240901-20240903`, is interpreted as arrival on 2024-09-01, departure on 2024-09-03 (arrival inclusive, departure exclusive).
 6. Each record in `bookings.json` represents exactly one booked room; there is no quantity field.
