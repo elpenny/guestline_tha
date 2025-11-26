@@ -46,6 +46,28 @@ public class DataLoaderTests
         Assert.True(result.IsFailed);
     }
 
+    [Fact]
+    public void LoadData_InvalidBookingDate_FailsGracefully()
+    {
+        using var temp = new TempFolder();
+        var hotelsPath = temp.WriteFile("hotels.json", ExampleHotelsJson);
+        var bookingsPath = temp.WriteFile("bookings.json", """
+        [
+          {
+            "hotelId": "H1",
+            "arrival": "not-a-date",
+            "departure": "20240903",
+            "roomType": "SGL",
+            "roomRate": "Prepaid"
+          }
+        ]
+        """);
+
+        var result = DataLoader.LoadData(new ProgramOptions(hotelsPath, bookingsPath));
+
+        Assert.True(result.IsFailed);
+    }
+
     private const string ExampleHotelsJson = """
     [
       {
