@@ -62,6 +62,15 @@ public class CommandParserTests
     }
 
     [Fact]
+    public void ParseAvailability_AllowsTrailingWhitespace()
+    {
+        var result = CommandParser.Parse<AvailabilityCommandArguments>("Availability(H1, 20240901, SGL)   ");
+
+        Assert.True(result.IsSuccess);
+        Assert.Equal("H1", result.Value.HotelId);
+    }
+
+    [Fact]
     public void ParseAvailability_MissingArgument_Fails()
     {
         var result = CommandParser.Parse<AvailabilityCommandArguments>("Availability(H1, 20240901)");

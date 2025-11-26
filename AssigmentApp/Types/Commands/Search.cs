@@ -14,9 +14,7 @@ public sealed record SearchResult(IReadOnlyList<SearchResultEntry> Entries)
     }
 
     private static string FormatRange(DateRange range) =>
-        range.IsSingleDay
-            ? range.Start.ToString("yyyyMMdd", CultureInfo.InvariantCulture)
-            : $"{range.Start:yyyyMMdd}-{range.End:yyyyMMdd}";
+        $"{range.Start:yyyyMMdd}-{range.End:yyyyMMdd}";
 }
 
 public readonly record struct SearchResultEntry(

@@ -49,7 +49,11 @@ public static class CommandParser
         var open = input.IndexOf('(');
         var close = input.LastIndexOf(')');
 
-        if (open <= 0 || close <= open || close != input.Length - 1)
+        if (open <= 0 || close <= open)
+            return false;
+
+        var trailing = input[(close + 1)..];
+        if (!string.IsNullOrWhiteSpace(trailing))
             return false;
 
         command = input[..open].Trim();
