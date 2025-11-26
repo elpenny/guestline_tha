@@ -8,7 +8,24 @@ public static class DataValidator
     public static Result Validate(ProgramState state)
     {
         var errors = new List<string>();
-        var hotelsById = state.Hotels.ToDictionary(h => h.Id);
+        var hotelsById = new Dictionary<string, Hotel>(StringComparer.OrdinalIgnoreCase);
+
+        foreach (var hotel in state.Hotels)
+        {
+            if (string.IsNullOrWhiteSpace(hotel.Id))
+            {
+                errors.Add("Hotel has missing or empty Id.");
+                continue;
+            }
+
+            if (hotelsById.ContainsKey(hotel.Id))
+            {
+                errors.Add($"Duplicate hotel id '{hotel.Id}'.");
+                continue;
+            }
+
+            hotelsById.Add(hotel.Id, hotel);
+        }
 
         foreach (var booking in state.Bookings)
         {

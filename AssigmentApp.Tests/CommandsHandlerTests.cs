@@ -27,6 +27,20 @@ public class CommandsHandlerTests
     }
 
     [Fact]
+    public void Availability_WithEmptyRange_Fails()
+    {
+        var state = TestDataFactory.CreateValidState();
+        var args = new AvailabilityCommandArguments(
+            "H1",
+            new DateRange(new DateOnly(2024, 9, 1), new DateOnly(2024, 9, 1)),
+            "SGL");
+
+        var result = CommandsHandler.HandleAvailability(state, args);
+
+        Assert.True(result.IsFailed);
+    }
+
+    [Fact]
     public void Availability_ForUnknownHotel_Fails()
     {
         var state = TestDataFactory.CreateValidState();

@@ -10,12 +10,6 @@ public static class BookingDateParser
     private static readonly CultureInfo Culture = CultureInfo.InvariantCulture;
 
     /// <summary>
-    /// Low-level literal date parsing. Used by JSON converters for arrival/departure.
-    /// </summary>
-    public static DateOnly ParseDate(string s) =>
-        DateOnly.ParseExact(s, DateFormat, Culture);
-
-    /// <summary>
     /// Safe literal date parsing with validation.
     /// </summary>
     public static Result<DateOnly> ParseDateResult(string s)

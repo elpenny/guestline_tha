@@ -32,7 +32,7 @@ public class DateOnlyJsonConverterTests
     [Fact]
     public void Deserialize_InvalidFormat_Throws()
     {
-        Assert.Throws<FormatException>(() =>
+        Assert.Throws<JsonException>(() =>
             JsonSerializer.Deserialize<Container>("{\"Date\":\"09-01-2024\"}", _options));
     }
 }
