@@ -10,6 +10,9 @@ public static class CommandsHandler
         ProgramState state,
         AvailabilityCommandArguments args)
     {
+        if (args.DateRange.End <= args.DateRange.Start)
+            return Result.Fail("Availability date range must end after it starts.");
+
         var hotel = FindHotel(state, args.HotelId);
         if (hotel is null)
             return Result.Fail($"Unknown hotel '{args.HotelId}'.");

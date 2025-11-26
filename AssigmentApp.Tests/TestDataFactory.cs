@@ -39,10 +39,13 @@ internal static class TestDataFactory
         string arrival,
         string departure)
     {
+        var arrivalDate = BookingDateParser.ParseDateResult(arrival).Value;
+        var departureDate = BookingDateParser.ParseDateResult(departure).Value;
+
         return new Booking(
             hotelId,
-            BookingDateParser.ParseDate(arrival),
-            BookingDateParser.ParseDate(departure),
+            arrivalDate,
+            departureDate,
             roomType,
             "Standard");
     }
