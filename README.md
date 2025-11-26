@@ -2,20 +2,23 @@
 
 Take Home Assigment for Guestline - short program for hotel rooms bookings management with minimal feature set.
 
-## How to build this
+## How to build and run
 
-Prerequisites: 
-1. Have dotnet 10 SDK
-2. (Optionally) add your own input files somewhere
+Prerequisites:
+1. .NET 10 SDK installed
+2. Input JSON files (examples provided under `example/`)
 
-What to do:
+Steps:
+1. Check out the repo
+2. From repo root, run:  
+   `dotnet run --project AssigmentApp --hotels example/hotels.json --bookings example/bookings.json`
+3. The app will print the command help; use `Availability(...)` and `Search(...)` commands. Press Enter on an empty line to exit.
+
+## How to test
 1. Check out repo
-2. Go into {repo_rot}/AssigmentApp
-3. Type `dotnet run --hotels ../example/hotels.json --bookings ../example/bookings.json`
-4. Enjoy working program!
+2. From repo root, run:  
+   `dotnet test`
+3. All tests should pass.
 
-## How to test this
-1. Check out repo
-2. Go into {repo_rot}
-3. Type `dotnet test`
-4. Test are running.
+## Notes on AI assistance
+The initial exploration, control flow design, component boundaries, and public signatures were written by me. AI assistance was used to fill in the implementation and unit tests that accompany this project.
