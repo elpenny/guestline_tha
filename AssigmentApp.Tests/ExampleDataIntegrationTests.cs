@@ -85,9 +85,28 @@ public class ExampleDataIntegrationTests
         var result = CommandsHandler.HandleSearch(state, args, new DateOnly(2024, 10, 5));
 
         Assert.True(result.IsSuccess);
-        var entry = Assert.Single(result.Value.Entries);
-        Assert.Equal(new DateRange(new DateOnly(2024, 10, 5), new DateOnly(2024, 10, 12)), entry.Range);
-        Assert.Equal(2, entry.RoomsAvailable);
+        Assert.Equal(2, result.Value.Entries.Count);
+        Assert.Contains(result.Value.Entries, e =>
+            e.Range == new DateRange(new DateOnly(2024, 10, 5), new DateOnly(2024, 10, 8)) &&
+            e.RoomsAvailable == 2);
+        Assert.Contains(result.Value.Entries, e =>
+            e.Range == new DateRange(new DateOnly(2024, 10, 9), new DateOnly(2024, 10, 12)) &&
+            e.RoomsAvailable == 2);
+    }
+
+    [Fact]
+    public void Availability_WithComplexExampleData_CanBeNegative()
+    {
+        // H2 has four QLN rooms; multiple overlapping bookings in the complex dataset
+        // create an overbooked date on 2024-10-08, yielding negative availability.
+        var state = LoadComplexExampleState();
+        var range = new DateRange(new DateOnly(2024, 10, 8), new DateOnly(2024, 10, 9));
+        var args = new AvailabilityCommandArguments("H2", range, "QLN");
+
+        var result = CommandsHandler.HandleAvailability(state, args);
+
+        Assert.True(result.IsSuccess);
+        Assert.Equal(-1, result.Value.RoomsAvailable);
     }
 
     private static ProgramState LoadExampleState() => ExampleState.Value;

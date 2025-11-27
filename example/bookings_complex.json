@@ -64,6 +64,27 @@
   },
   {
     "hotelId": "H2",
+    "arrival": "20241007",
+    "departure": "20241009",
+    "roomType": "QLN",
+    "roomRate": "Group"
+  },
+  {
+    "hotelId": "H2",
+    "arrival": "20241008",
+    "departure": "20241009",
+    "roomType": "QLN",
+    "roomRate": "Standard"
+  },
+  {
+    "hotelId": "H2",
+    "arrival": "20241008",
+    "departure": "20241011",
+    "roomType": "QLN",
+    "roomRate": "Corporate"
+  },
+  {
+    "hotelId": "H2",
     "arrival": "20241015",
     "departure": "20241017",
     "roomType": "QLN",
