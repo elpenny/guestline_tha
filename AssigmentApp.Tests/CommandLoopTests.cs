@@ -14,8 +14,7 @@ public class CommandLoopTests
         CommandLoop.Run(input, output, state);
 
         var text = output.ToString();
-        var helpCount = text.Split(ProgramConstants.HelpMessage, StringSplitOptions.None).Length - 1;
-        Assert.True(helpCount >= 2);
+        Assert.Contains(ProgramConstants.HelpMessage.Trim(), text);
         Assert.Contains("\n1\n", text);
     }
 
@@ -30,8 +29,6 @@ public class CommandLoopTests
 
         var text = output.ToString();
         Assert.Contains("Unknown command 'Unknown'.", text);
-        var helpCount = text.Split(ProgramConstants.HelpMessage, StringSplitOptions.None).Length - 1;
-        Assert.True(helpCount >= 2);
     }
 
     [Fact]
@@ -45,7 +42,5 @@ public class CommandLoopTests
 
         var text = output.ToString();
         Assert.Contains("Invalid command format", text);
-        var helpCount = text.Split(ProgramConstants.HelpMessage, StringSplitOptions.None).Length - 1;
-        Assert.True(helpCount >= 2);
     }
 }

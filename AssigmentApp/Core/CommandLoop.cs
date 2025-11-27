@@ -20,45 +20,50 @@ public static class CommandLoop
             if (commandName is null)
             {
                 writer.WriteLine("Invalid command format. Expected Command(arg1, arg2, ...).");
+                continue;
             }
-            else if (commandName.Equals(nameof(CommandType.Availability), StringComparison.OrdinalIgnoreCase))
+
+            if (commandName.Equals(nameof(CommandType.Availability), StringComparison.OrdinalIgnoreCase))
             {
                 var parseResult = CommandParser.Parse<AvailabilityCommandArguments>(line);
                 if (parseResult.IsFailed)
                 {
                     WriteErrors(writer, parseResult.Errors);
+                    continue;
                 }
-                else
+
+                var result = CommandsHandler.HandleAvailability(state, parseResult.Value);
+                if (result.IsFailed)
                 {
-                    var result = CommandsHandler.HandleAvailability(state, parseResult.Value);
-                    if (result.IsFailed)
-                        WriteErrors(writer, result.Errors);
-                    else
-                        writer.WriteLine(result.Value.RoomsAvailable);
+                    WriteErrors(writer, result.Errors);
+                    continue;
                 }
+
+                writer.WriteLine(result.Value.RoomsAvailable);
+                continue;
             }
-            else if (commandName.Equals(nameof(CommandType.Search), StringComparison.OrdinalIgnoreCase))
+
+            if (commandName.Equals(nameof(CommandType.Search), StringComparison.OrdinalIgnoreCase))
             {
                 var parseResult = CommandParser.Parse<SearchCommandArguments>(line);
                 if (parseResult.IsFailed)
                 {
                     WriteErrors(writer, parseResult.Errors);
+                    continue;
                 }
-                else
+
+                var result = CommandsHandler.HandleSearch(state, parseResult.Value);
+                if (result.IsFailed)
                 {
-                    var result = CommandsHandler.HandleSearch(state, parseResult.Value);
-                    if (result.IsFailed)
-                        WriteErrors(writer, result.Errors);
-                    else
-                        writer.WriteLine(result.Value.ToString());
+                    WriteErrors(writer, result.Errors);
+                    continue;
                 }
-            }
-            else
-            {
-                writer.WriteLine($"Unknown command '{commandName}'.");
+
+                writer.WriteLine(result.Value.ToString());
+                continue;
             }
 
-            writer.WriteLine(ProgramConstants.HelpMessage);
+            writer.WriteLine($"Unknown command '{commandName}'.");
         }
     }
 
