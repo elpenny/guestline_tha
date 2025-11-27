@@ -1,0 +1,61 @@
+[
+  {
+    "id": "H1",
+    "name": "Lakefront Resort",
+    "roomTypes": [
+      {
+        "code": "STD",
+        "description": "Standard Room",
+        "amenities": [ "WiFi", "TV" ],
+        "features": [ "Lake View Optional" ]
+      },
+      {
+        "code": "DLX",
+        "description": "Deluxe Room",
+        "amenities": [ "WiFi", "TV", "Minibar", "Coffee Machine" ],
+        "features": [ "Balcony", "Non-smoking" ]
+      },
+      {
+        "code": "FAM",
+        "description": "Family Suite",
+        "amenities": [ "WiFi", "TV", "Kitchenette" ],
+        "features": [ "Two Bedrooms", "Baby Cot Available" ]
+      }
+    ],
+    "rooms": [
+      { "roomType": "STD", "roomId": "101" },
+      { "roomType": "STD", "roomId": "102" },
+      { "roomType": "STD", "roomId": "103" },
+      { "roomType": "DLX", "roomId": "201" },
+      { "roomType": "DLX", "roomId": "202" },
+      { "roomType": "FAM", "roomId": "301" },
+      { "roomType": "FAM", "roomId": "302" }
+    ]
+  },
+  {
+    "id": "H2",
+    "name": "Mountain View Lodge",
+    "roomTypes": [
+      {
+        "code": "QLN",
+        "description": "Queen Room",
+        "amenities": [ "WiFi", "TV" ],
+        "features": [ "Mountain View" ]
+      },
+      {
+        "code": "STE",
+        "description": "Suite",
+        "amenities": [ "WiFi", "TV", "Minibar", "Coffee Machine" ],
+        "features": [ "Fireplace", "Balcony" ]
+      }
+    ],
+    "rooms": [
+      { "roomType": "QLN", "roomId": "401" },
+      { "roomType": "QLN", "roomId": "402" },
+      { "roomType": "QLN", "roomId": "403" },
+      { "roomType": "QLN", "roomId": "404" },
+      { "roomType": "STE", "roomId": "501" },
+      { "roomType": "STE", "roomId": "502" }
+    ]
+  }
+]

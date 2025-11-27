@@ -14,6 +14,10 @@ Steps:
    `dotnet run --project AssigmentApp --hotels example/hotels.json --bookings example/bookings.json`
 3. The app will print the command help; use `Availability(...)` and `Search(...)` commands. Press Enter on an empty line to exit.
 
+Example datasets:
+- `example/hotels.json` and `example/bookings.json`: single-hotel, minimal starter set.
+- `example/hotels_complex.json` and `example/bookings_complex.json`: multi-hotel set with overlapping bookings to exercise availability/search edge cases.
+
 ## How to test
 1. Check out repo
 2. From repo root, run:  

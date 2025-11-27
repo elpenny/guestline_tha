@@ -91,6 +91,29 @@ public class CommandsHandlerTests
     }
 
     [Fact]
+    public void Availability_CanReturnNegativeWhenOverbooked()
+    {
+        var state = TestDataFactory.CreateValidState(bookings: new[]
+        {
+            // Two rooms exist; book three overlapping stays
+            TestDataFactory.CreateBooking("H1", "SGL", "20240901", "20240903"),
+            TestDataFactory.CreateBooking("H1", "SGL", "20240901", "20240903"),
+            TestDataFactory.CreateBooking("H1", "SGL", "20240902", "20240903")
+        });
+
+        var args = new AvailabilityCommandArguments(
+            "H1",
+            new DateRange(new DateOnly(2024, 9, 1), new DateOnly(2024, 9, 3)),
+            "SGL");
+
+        var result = CommandsHandler.HandleAvailability(state, args);
+
+        Assert.True(result.IsSuccess);
+        // Capacity 2 minus 3 bookings => -1 indicates overbooking
+        Assert.Equal(-1, result.Value.RoomsAvailable);
+    }
+
+    [Fact]
     public void Search_FindsContiguousAvailableRanges()
     {
         var state = TestDataFactory.CreateValidState(bookings: new[]
