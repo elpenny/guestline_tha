@@ -4,7 +4,7 @@ using AssigmentApp.Types.Commands;
 
 namespace AssigmentApp.Tests;
 
-public class CommandsHandlerTests
+public class CommandHandlerTests
 {
     [Fact]
     public void Availability_ReturnsCapacityMinusBookings()
@@ -19,7 +19,7 @@ public class CommandsHandlerTests
             new DateRange(new DateOnly(2024, 9, 1), new DateOnly(2024, 9, 2)),
             "SGL");
 
-        var result = CommandsHandler.HandleAvailability(state, args);
+        var result = CommandHandler.HandleAvailability(state, args);
 
         Assert.True(result.IsSuccess);
         // Capacity 2 (rooms 101,102) minus 1 booking => 1
@@ -35,7 +35,7 @@ public class CommandsHandlerTests
             new DateRange(new DateOnly(2024, 9, 1), new DateOnly(2024, 9, 1)),
             "SGL");
 
-        var result = CommandsHandler.HandleAvailability(state, args);
+        var result = CommandHandler.HandleAvailability(state, args);
 
         Assert.True(result.IsFailed);
     }
@@ -49,7 +49,7 @@ public class CommandsHandlerTests
             new DateRange(new DateOnly(2024, 9, 1), new DateOnly(2024, 9, 2)),
             "SGL");
 
-        var result = CommandsHandler.HandleAvailability(state, args);
+        var result = CommandHandler.HandleAvailability(state, args);
 
         Assert.True(result.IsFailed);
     }
@@ -63,7 +63,7 @@ public class CommandsHandlerTests
             new DateRange(new DateOnly(2024, 9, 1), new DateOnly(2024, 9, 2)),
             "MISSING");
 
-        var result = CommandsHandler.HandleAvailability(state, args);
+        var result = CommandHandler.HandleAvailability(state, args);
 
         Assert.True(result.IsFailed);
     }
@@ -83,7 +83,7 @@ public class CommandsHandlerTests
             new DateRange(new DateOnly(2024, 9, 1), new DateOnly(2024, 9, 3)),
             "SGL");
 
-        var result = CommandsHandler.HandleAvailability(state, args);
+        var result = CommandHandler.HandleAvailability(state, args);
 
         Assert.True(result.IsSuccess);
         // Day 1 availability: 1; Day 2 availability: 1 -> min = 1
@@ -106,7 +106,7 @@ public class CommandsHandlerTests
             new DateRange(new DateOnly(2024, 9, 1), new DateOnly(2024, 9, 3)),
             "SGL");
 
-        var result = CommandsHandler.HandleAvailability(state, args);
+        var result = CommandHandler.HandleAvailability(state, args);
 
         Assert.True(result.IsSuccess);
         // Capacity 2 minus 3 bookings => -1 indicates overbooking
@@ -125,7 +125,7 @@ public class CommandsHandlerTests
 
         var args = new SearchCommandArguments("H1", 5, "SGL");
 
-        var result = CommandsHandler.HandleSearch(
+        var result = CommandHandler.HandleSearch(
             state,
             args,
             today: new DateOnly(2024, 9, 1));
@@ -142,7 +142,7 @@ public class CommandsHandlerTests
         var state = TestDataFactory.CreateValidState();
         var args = new SearchCommandArguments("Missing", 5, "SGL");
 
-        var result = CommandsHandler.HandleSearch(state, args, today: new DateOnly(2024, 9, 1));
+        var result = CommandHandler.HandleSearch(state, args, today: new DateOnly(2024, 9, 1));
 
         Assert.True(result.IsFailed);
     }
@@ -153,7 +153,7 @@ public class CommandsHandlerTests
         var state = TestDataFactory.CreateValidState();
         var args = new SearchCommandArguments("H1", 5, "MISSING");
 
-        var result = CommandsHandler.HandleSearch(state, args, today: new DateOnly(2024, 9, 1));
+        var result = CommandHandler.HandleSearch(state, args, today: new DateOnly(2024, 9, 1));
 
         Assert.True(result.IsFailed);
     }

@@ -4,7 +4,7 @@ using FluentResults;
 
 namespace AssigmentApp.Core;
 
-public static class CommandsHandler
+public static class CommandHandler
 {
     public static Result<AvailabilityResult> HandleAvailability(
         ProgramState state,

@@ -32,7 +32,7 @@ public static class CommandLoop
                     continue;
                 }
 
-                var result = CommandsHandler.HandleAvailability(state, parseResult.Value);
+                var result = CommandHandler.HandleAvailability(state, parseResult.Value);
                 if (result.IsFailed)
                 {
                     WriteErrors(writer, result.Errors);
@@ -52,7 +52,7 @@ public static class CommandLoop
                     continue;
                 }
 
-                var result = CommandsHandler.HandleSearch(state, parseResult.Value);
+                var result = CommandHandler.HandleSearch(state, parseResult.Value);
                 if (result.IsFailed)
                 {
                     WriteErrors(writer, result.Errors);
