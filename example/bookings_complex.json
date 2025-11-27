@@ -1,0 +1,86 @@
+[
+  {
+    "hotelId": "H1",
+    "arrival": "20241010",
+    "departure": "20241012",
+    "roomType": "STD",
+    "roomRate": "Standard"
+  },
+  {
+    "hotelId": "H1",
+    "arrival": "20241011",
+    "departure": "20241014",
+    "roomType": "STD",
+    "roomRate": "Prepaid"
+  },
+  {
+    "hotelId": "H1",
+    "arrival": "20241015",
+    "departure": "20241018",
+    "roomType": "STD",
+    "roomRate": "Standard"
+  },
+  {
+    "hotelId": "H1",
+    "arrival": "20241010",
+    "departure": "20241013",
+    "roomType": "DLX",
+    "roomRate": "Prepaid"
+  },
+  {
+    "hotelId": "H1",
+    "arrival": "20241012",
+    "departure": "20241016",
+    "roomType": "DLX",
+    "roomRate": "Corporate"
+  },
+  {
+    "hotelId": "H1",
+    "arrival": "20241020",
+    "departure": "20241025",
+    "roomType": "FAM",
+    "roomRate": "Standard"
+  },
+  {
+    "hotelId": "H2",
+    "arrival": "20241005",
+    "departure": "20241007",
+    "roomType": "QLN",
+    "roomRate": "Standard"
+  },
+  {
+    "hotelId": "H2",
+    "arrival": "20241006",
+    "departure": "20241009",
+    "roomType": "QLN",
+    "roomRate": "Prepaid"
+  },
+  {
+    "hotelId": "H2",
+    "arrival": "20241008",
+    "departure": "20241010",
+    "roomType": "QLN",
+    "roomRate": "Corporate"
+  },
+  {
+    "hotelId": "H2",
+    "arrival": "20241015",
+    "departure": "20241017",
+    "roomType": "QLN",
+    "roomRate": "Standard"
+  },
+  {
+    "hotelId": "H2",
+    "arrival": "20241003",
+    "departure": "20241008",
+    "roomType": "STE",
+    "roomRate": "Prepaid"
+  },
+  {
+    "hotelId": "H2",
+    "arrival": "20241018",
+    "departure": "20241020",
+    "roomType": "STE",
+    "roomRate": "Corporate"
+  }
+]
